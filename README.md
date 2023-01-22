@@ -4,8 +4,7 @@ A custom addon that can be added on any existing Switch Board in your house to m
 
 ![Logo 1](docs/arduino_13_esp32_02_logo.jpg)
 
-![Logo 3](https://lh3.googleusercontent.com/5k09m7qzubU2c6LhddzU8IGtaqvnvrBvwSrvWmuL875nafq8v-qEqtfg-9TaajNbuAXKo-tI4pV2JA_hzIOlCN9hwq1b0ahdSVISpohjCNWUXStiM8cI) 
-<img src="docs/alexa2.png" width="500">
+<img src="https://lh3.googleusercontent.com/5k09m7qzubU2c6LhddzU8IGtaqvnvrBvwSrvWmuL875nafq8v-qEqtfg-9TaajNbuAXKo-tI4pV2JA_hzIOlCN9hwq1b0ahdSVISpohjCNWUXStiM8cI" width="330"> <img src="docs/alexa2.png" width="400">
 
 ## Total Cost
 
@@ -27,11 +26,11 @@ The above mentioned cost is completely dishonest and excludes the following fact
 
 ![](docs/chand.gif)
 
-### Rain Maker App
-<img src="docs/RM.png"  width="500" /> 
+| Rain Maker App                         | Google Home                             |
+|----------------------------------------|-----------------------------------------|
+|<img src="docs/RM.png"  width="300" />  |  <img src="docs/GH.png"  width="300" /> |
 
-### Google Home
-<img src="docs/GH.png"  width="500" />
+
 
 ## Motivation
 
