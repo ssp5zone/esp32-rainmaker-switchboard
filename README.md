@@ -2,9 +2,16 @@
 
 A custom addon that can be added on any existing Switch Board in your house to make it Automated.
 
+![Logo 1](docs/arduino_13_esp32_02_logo.jpg)
+
+![Logo 3](https://lh3.googleusercontent.com/5k09m7qzubU2c6LhddzU8IGtaqvnvrBvwSrvWmuL875nafq8v-qEqtfg-9TaajNbuAXKo-tI4pV2JA_hzIOlCN9hwq1b0ahdSVISpohjCNWUXStiM8cI) 
+<img src="docs/alexa2.png" width="500">
+
 ## Total Cost
 
-This includes the cost of the ESP32 + 4 channel Relay - including the normalized shipping and custom charges.
+![Total Cost](docs/cost.png)
+
+including the normalized shipping and custom charges.
 
 ### Dishonesty Disclaimer
 
@@ -16,9 +23,19 @@ The above mentioned cost is completely dishonest and excludes the following fact
 * **Mental Health** - The mental health of the person who made this project.
 * **Mental Health of the person who will read this** - The mental health of the person who will read this project.
 
+## Demo
+
+![](docs/chand.gif)
+
+### Rain Maker App
+<img src="docs/RM.png"  width="500" /> 
+
+### Google Home
+<img src="docs/GH.png"  width="500" />
+
 ## Motivation
 
-1. Make a home automation within a budget of $5 USD. Why?? That's a good question.
+1. Make a home automation within a budget < $5 USD. Why?? That's a good question.
 2. Make the example code more humanly readable, configuarable and reusable.
 
 ## Requirement
@@ -45,7 +62,9 @@ All the software required to run this project are free and open source.
 
 1. Download the Arduino IDE and install it.
 2. Open File > Preferences and add the above EspressIf Board Manager URL to the Additional Boards Manager URLs field.
+![Step 2](docs/Step1.jpg)
 3. Open Tools > Board > Boards Manager and verify if `esp32` is listed. _(Restart the IDE if needed)_
+![Step 3](docs/Step2.jpg)
 4. Clone this repository and open the folder in the Arduino IDE.
 5. Change the PIN configurations according to your setup.
 6. Connect the ESP32 to your PC using a USB Type B Cable.
