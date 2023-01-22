@@ -1,8 +1,13 @@
+// The following 4 variables dont have any use. But just given here in case you would like to use them.
 Button *fan;
 Button *lights;
 Button *bulb;
 Button *extra;
 
+
+/**
+ * Onn Device Start / Reset 
+ */
 void setup() {
   Serial.begin(115200);
 
@@ -22,6 +27,10 @@ void setup() {
   initProv();
 }
 
+
+/**
+ * Do this forever
+ */
 void loop() {
 
   // Keep Reading reset button
@@ -29,6 +38,11 @@ void loop() {
 }
 
 
+/**
+ * Initialize the buttons
+ * ----------------------
+ * TODO: Move to Array
+ */
 void initButtons() {
   fan = new Button(DEVICE_FAN, FAN_RELAY_PIN, FAN_EEPROM_ADDRESS, ESP_RMAKER_DEVICE_FAN);
   lights = new Button(DEVICE_LIGHTS, LIGHTS_RELAY_PIN, LIGHTS_EEPROM_ADDRESS, ESP_RMAKER_DEVICE_LIGHTBULB);

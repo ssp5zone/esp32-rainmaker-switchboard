@@ -1,14 +1,17 @@
- void initReset() {
+/**
+ * Allow device to be reset to factory settings
+ */
+void initReset() {
 
   // Set boot button as input
   pinMode(BOOT_BUTTON, INPUT);
 }
 
 
-/*
+/**
  * This is a fallback in case one would like to 
  * change the Wifi Password or completely reset/reboot the 
- * whole device
+ * whole device.
  */
 void readReset() {
 

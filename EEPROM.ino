@@ -1,3 +1,8 @@
+/**
+ * EEPROM
+ * ************************************************************
+ * Initialize the EEPROM
+ */
 void initEEPROM() {
   
   // initialize EEPROM with predefined size

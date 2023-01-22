@@ -1,4 +1,5 @@
-#define DEVICE_PREFIX "ESP32_"
+// Name of this Node
+const char *NODE_NAME = "HallNode"; 
 
 // The Bluetooth Name and Password for this ESP32 device
 const char *BLE_DEVICE_NAME = "HallNode";

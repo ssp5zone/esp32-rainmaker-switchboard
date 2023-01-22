@@ -1,13 +1,26 @@
+
+/**
+ * Button Class
+ * ****************************************************************
+ * 
+ * A custom wrapper that manages the Rain Maker Device, the EEPROM (remmembering the last state) and the actual button.
+ */
 class Button {
+
+  // Private members
   private:
     
-    const char *_name;
-    int _pin;
-    int _address;
-    int _state;
-    Device _device;
-    const char *_deviceType;
+    const char *_name; // The name of this button
+    int _pin; // The pin number of where the relay is connected
+    int _address; // The EEPROM address to store the last state
+    int _state; // The last known state of this button
+    Device _device; // The Rain Maker Device
+    const char *_deviceType; // The type of the Rain Maker Device
     
+
+    /**
+     * Initialize the button
+     */
     void _init() {
       // setup the pin as a digital output pin
       pinMode (_pin, OUTPUT);
@@ -50,11 +63,17 @@ class Button {
       node.addDevice(_device);
     }
     
+    /**
+     * Persist the state of this button.
+     * This is used to remember the last state of this button in the event
+     * of a power failure or disconnection from the power source.
+     */
     void _persist(int state) {
       _state = state;
       EEPROM.write(_address, _state);
       EEPROM.commit();
     }
+
     /**
      * The callback for RainMaker events
      */
@@ -63,14 +82,25 @@ class Button {
         const char *device_name = device->getDeviceName();
         const char *param_name = param->getParamName();
     
+        // If this is a Power State change event
         if(strcmp(param_name, "Power") == 0) {
+
             Serial.printf("%s - %s: Received value = %s\n", device_name, param_name, val.val.b ? "true" : "false");
+
+            // Get the button instance associated with this device
             Button *button = (Button *)(priv_data);
+
+            // Update the state of the button
             button->SWITCH(val.val.b);
+
+            // Tell the App that the state has been updated. (The button toggle animation on the App)
             param->updateAndReport(val);
         }
     }
+
+  // Public members
   public:
+
     Button(const char *buttonName, int buttonPin, int eepromAddress, const char *type) {
       _name = buttonName;
       _pin = buttonPin;
@@ -81,6 +111,7 @@ class Button {
       Serial.printf("Created button: %s", _name);
       Serial.println();
     }
+    
     void ON() {
       digitalWrite (_pin, LOW); 
       _persist(LOW);

@@ -1,3 +1,11 @@
+
+/**
+ * WiFi Provisioning Management
+ * ****************************************************************
+ * 
+ * The WiFi provisioning event handler.
+ * This is called when the WiFi provisioning is started, stopped, or when a credential is received.
+ */
 void sysProvEvent(arduino_event_t *sys_event) {
     switch (sys_event->event_id) {
       
@@ -18,10 +26,18 @@ void sysProvEvent(arduino_event_t *sys_event) {
     }
 }
 
-
+/**
+ * Initialize the WiFi Provisioning
+ * ****************************************************************
+ * 
+ * Instead of us manually entering the WiFi credentials, we can use the WiFi provisioning
+ * to automatically connect to the WiFi network.
+ */
 void initProv() {
   
+    // On all wifi events, call the sysProvEvent handler
     WiFi.onEvent(sysProvEvent);
 
+    // Start the WiFi provisioning
     WiFiProv.beginProvision(WIFI_PROV_SCHEME_BLE, WIFI_PROV_SCHEME_HANDLER_FREE_BTDM, WIFI_PROV_SECURITY_1, BLE_DEVICE_PASS, BLE_DEVICE_NAME);
 }
